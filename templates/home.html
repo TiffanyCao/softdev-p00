@@ -21,12 +21,14 @@ Home
     Welcome <b>{{user}}</b>!
 </H2>
 
+<div class = "message" style = "color: #ED534F">
 {% set msgs = get_flashed_messages() %}
 {% for msg in msgs %}
 <i>
     {{ msg }}
 </i>
 {% endfor %}
+</div>
 <br><br>
 
 <form action="/login", method = "GET">
@@ -42,19 +44,23 @@ Home
 </form>
 <br><br><br>
 
-<H2>
+<H2 style = "color: #2D24B0">
     Stories You Have Contributed To:
 </H2>
-<hr>
-
+<hr noshade size = "3px;">
 {% for title, story in stories.items() %}
-<H3>
-    {{title}}
-</H3>
-<p>
-    {{story}}
-</p>
-<hr>
+  <div class = "story-block" style = "background-color: #82CAFF; width: 900px;">
+    <H3 style = "height: 10px;">
+        {{title}}
+    </H3>
+    <div class = "story" style = "background-color: #EBF4FA;">
+    <p>
+        {{story}}
+    </p>
+    <br>
+    </div>
+  </div>
 {% endfor %}
+
 
 {% endblock %}

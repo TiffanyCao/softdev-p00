@@ -26,15 +26,17 @@ Browse
 </form>
 <br><br><br>
 
-<H2>
+<H2 style = "color: #2D24B0">
     Stories To Contribute To:
 </H2>
 <form action = "/contribute", method = "GET">
     {% for titles in stories %}
+    <div class = "story">
     <li>
         <input type = "submit" name="subCoby" value = "{{titles}}">
         <br>
     </li>
+    </div>
     {% endfor %}
 </form>
 
