@@ -17,6 +17,18 @@
 {% endblock %}
 
 {% block content %}
+<style>
+  input[type = submit] {
+    background-color: #D9FFF8;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #C7FFDA;
+    border-radius: 12px;
+  }
+  input[type = submit]:hover {
+  background-color: white
+  }
+</style>
 <H2>
     <div class = "title" style = "color: #2D24B0"> Latest update: </div> "{{latest}}"
 </H2>
@@ -28,10 +40,10 @@
     </H2>
     <input type="hidden" name="title" value="{{title}}">
     <textarea rows="10" cols="50" maxlength = "300" name = "text"></textarea><br>
-    Text Limit: 300 characters<br>
+    Text Limit: 300 characters<br><br>
     <input type = "submit" name = "sub1" value = "Submit"><br>
 </form>
-<br>
+<br><br>
 <form action ="/browse">
     <input type = "submit" name = "sub2" value = "Cancel"><br>
 </form>

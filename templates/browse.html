@@ -17,12 +17,37 @@ Browse
 {% endblock %}
 
 {% block content %}
-<form action = "/home", method = "GET">
-		<input type = "submit" name = "sub1" value = "Home">
+<style>
+  input[type = button] {
+    background-color: #D9FFF8;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #C7FFDA;
+    border-radius: 12px;
+  }
+
+  input[type = button]:hover {
+  background-color: white
+  }
+
+  input[type = submit] {
+    background-color: #E8E1EF;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #DBCBD8;
+    border-radius: 10px;
+  }
+
+  input[type = submit]:hover {
+    background-color: white
+  }
+</style>
+<form>
+		<input type = "button" onclick="location.href='/home';" name = "sub1" value = "Home">
 </form>
 <br>
-<form action = "/login", method = "GET">
-		<input type = "submit" name = "sub2" value = "Logout">
+<form>
+		<input type = "button" onclick="location.href='/login';" name = "sub2" value = "Logout">
 </form>
 <br><br><br>
 

@@ -17,11 +17,23 @@ Home
 {% endblock %}
 
 {% block content %}
+<style>
+  input[type = submit] {
+    background-color: #D9FFF8;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #C7FFDA;
+    border-radius: 12px;
+  }
+  input[type = submit]:hover {
+  background-color: white
+  }
+</style>
 <H2>
     Welcome <b>{{user}}</b>!
 </H2>
 
-<div class = "message" style = "color: #ED534F">
+<div class = "message" style = "color: #ED534F; font-weight: bold;">
 {% set msgs = get_flashed_messages() %}
 {% for msg in msgs %}
 <i>
@@ -29,7 +41,7 @@ Home
 </i>
 {% endfor %}
 </div>
-<br><br>
+<br>
 
 <form action="/login", method = "GET">
 	<input type="submit" name="sub1" value="Logout" > <br>
@@ -49,7 +61,7 @@ Home
 </H2>
 <hr noshade size = "3px;">
 {% for title, story in stories.items() %}
-  <div class = "story-block" style = "background-color: #82CAFF; width: 900px;">
+  <div class = "story-block" style = "background-color: #82CAFF; width: 1000px; border-radius: 12px;">
     <H3 style = "height: 10px;">
         {{title}}
     </H3>

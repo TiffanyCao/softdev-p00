@@ -17,7 +17,20 @@ Login
 {% endblock %}
 
 {% block content %}
-<H3>
+<style>
+  input[type = submit] {
+    background-color: #D9FFF8;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 2px solid #C7FFDA;
+    border-radius: 12px;
+  }
+
+  input[type = submit]:hover {
+  background-color: white
+  }
+</style>
+<H3 style = "font-weight: bold; color: #ED534F;">
 {% set msgs = get_flashed_messages() %}
 {% for msg in msgs %}
 <i>
@@ -33,7 +46,7 @@ Login
     <input type = "text" name = "password"> <br>
     <input type = "submit" name = "sub" value = "Login"> <br>
 </form>
-<br>
+<br><br>
 <form action = "/register", method = "GET">
 	<input type = "submit" name = "sub1" value = "Register A New Account">
 </form>
