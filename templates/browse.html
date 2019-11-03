@@ -6,63 +6,49 @@
 -->
 <!-- Browse Page utilizing base.html Jinja blocks: displays stories not yet contributed to -->
 
-{% extends "base.html" %}
+<style>
+    input[type=button] {
+        border: 2px solid #C7FFDA;
+    }
 
+    input[type=submit] {
+        background-color: #D9FFF8;
+        border: 2px solid #C7FFDA;
+    }
+</style>
+<!-- need to override because submit and button are flopped !-->
+
+{% extends "base.html" %}
 {% block title %}
 Browse
 {% endblock %}
 
 {% block pageTitle %}
-    Browse Stories
+Browse Stories
 {% endblock %}
 
 {% block content %}
-<style>
-  input[type = button] {
-    background-color: #D9FFF8;
-    font-size: 16px;
-    padding: 10px;
-    border: 2px solid #C7FFDA;
-    border-radius: 12px;
-  }
+<div class="buttons">
+    <form>
+        <input type="button" onclick="location.href='/home';" name="sub1" value="Home">
+    </form>
+    <form>
+        <input type="button" onclick="location.href='/login';" name="sub2" value="Logout">
+    </form>
+    <br><br><br>
+</div>
 
-  input[type = button]:hover {
-  background-color: white
-  }
-
-  input[type = submit] {
-    background-color: #E8E1EF;
-    font-size: 16px;
-    padding: 10px;
-    border: 2px solid #DBCBD8;
-    border-radius: 10px;
-  }
-
-  input[type = submit]:hover {
-    background-color: white
-  }
-</style>
-<form>
-		<input type = "button" onclick="location.href='/home';" name = "sub1" value = "Home">
-</form>
-<br>
-<form>
-		<input type = "button" onclick="location.href='/login';" name = "sub2" value = "Logout">
-</form>
-<br><br><br>
-
-<H2 style = "color: #2D24B0">
-    Stories To Contribute To:
-</H2>
-<form action = "/contribute", method = "GET">
-    {% for titles in stories %}
-    <div class = "story">
-    <li>
-        <input type = "submit" name="subCoby" value = "{{titles}}">
-        <br>
-    </li>
-    </div>
-    {% endfor %}
-</form>
+<div class="stories">
+    <h2> Stories To Contribute To: </h2>
+    <form action="/contribute" , method="GET">
+        {% for titles in stories %}
+        <div class="storiess" style="display: inline-flex">
+            <input type="submit" name="subCoby" value="{{titles}}">
+            <br>
+            <br><br>
+        </div>
+        {% endfor %}
+    </form>
+</div>
 
 {% endblock %}

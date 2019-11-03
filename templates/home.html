@@ -13,66 +13,55 @@ Home
 {% endblock %}
 
 {% block pageTitle %}
-    Home Page/Story Viewer
+Home Page/Story Viewer
 {% endblock %}
 
 {% block content %}
-<style>
-  input[type = submit] {
-    background-color: #D9FFF8;
-    font-size: 16px;
-    padding: 10px;
-    border: 2px solid #C7FFDA;
-    border-radius: 12px;
-  }
-  input[type = submit]:hover {
-  background-color: white
-  }
-</style>
+
 <H2>
     Welcome <b>{{user}}</b>!
 </H2>
-
-<div class = "message" style = "color: #ED534F; font-weight: bold;">
-{% set msgs = get_flashed_messages() %}
-{% for msg in msgs %}
-<i>
-    {{ msg }}
-</i>
-{% endfor %}
+<div class="message" style="color: #ED534F; font-weight: bold;">
+    {% set msgs = get_flashed_messages() %}
+    {% for msg in msgs %}
+    <i>
+        {{ msg }}
+    </i>
+    {% endfor %}
 </div>
 <br>
-
-<form action="/login", method = "GET">
-	<input type="submit" name="sub1" value="Logout" > <br>
-</form>
-<br>
-<form action="/create", method = "GET">
-	<input type="submit" name="sub2" value="Create a New Story" > <br>
-</form>
-<br>
-<form action="/browse", method = "GET">
-	<input type="submit" name="sub3" value="Browse Stories" > <br>
-</form>
-<br><br><br>
-
-<H2 style = "color: #2D24B0">
-    Stories You Have Contributed To:
-</H2>
-<hr noshade size = "3px;">
-{% for title, story in stories.items() %}
-  <div class = "story-block" style = "background-color: #82CAFF; width: 1000px; border-radius: 12px;">
-    <H3 style = "height: 10px;">
-        {{title}}
-    </H3>
-    <div class = "story" style = "background-color: #EBF4FA;">
-    <p>
-        {{story}}
-    </p>
-    <br>
+<div class="container" style="display: flex">
+    <div class="buttons" style="padding: 50px">
+        <br>
+        <form action="/login" , method="GET">
+            <input type="submit" name="sub1" value="Logout"> <br>
+        </form>
+        <br>
+        <form action="/create" , method="GET">
+            <input type="submit" name="sub2" value="Create a New Story"> <br>
+        </form>
+        <br>
+        <form action="/browse" , method="GET">
+            <input type="submit" name="sub3" value="Browse Stories"> <br>
+        </form>
+        <br><br><br>
     </div>
-  </div>
-{% endfor %}
 
-
+    <div class="stories" style="padding-left: 40px">
+        <H2> Stories You Have Contributed To: </H2>
+        {% for title, story in stories.items() %}
+        <div class="story-block">
+            <H3 style="height: 10px;">
+                {{title}}
+            </H3>
+            <div class="story">
+                <p>
+                    {{story}}
+                </p>
+                <br>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

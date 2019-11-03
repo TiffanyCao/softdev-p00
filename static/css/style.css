@@ -1,4 +1,67 @@
 body {
-  background-color: #C2DFFF;
-  font-family: Optima;
+    background-color: #C2DFFF;
+    font-family: Optima;
+}
+
+input[type=submit] {
+    background-color: #D9FFF8;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #C7FFDA;
+    border-radius: 12px;
+}
+
+input[type=submit]:hover {
+    background-color: white
+}
+
+input[type=button] {
+    background-color: #E8E1EF;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #DBCBD8;
+    border-radius: 10px;
+}
+
+
+input[type=button]:hover {
+    background-color: white;
+}
+
+message {
+    color: #ED534F;
+    font-weight: bold;
+}
+
+h2 {
+    color: #2D24B0;
+    align-content: center;
+}
+
+.story {
+    padding: 20px;
+    font-size: 15px;
+    background-color: #EBF4FA;
+}
+
+.story-block {
+    background-color: #82CAFF;
+    border-radius: 12px;
+    width: auto
+}
+
+content {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    height: 100%;
+}
+
+h3 {
+    height: 20px;
+}
+
+title {
+    color: #2D24B0;
 }

@@ -13,32 +13,21 @@ Creating New Story
 {% endblock %}
 
 {% block pageTitle %}
-    Create a New Story
+Create a New Story
 {% endblock %}
 
 {% block content %}
-<style>
-  input[type = submit] {
-    background-color: #D9FFF8;
-    font-size: 16px;
-    padding: 10px;
-    border: 2px solid #C7FFDA;
-    border-radius: 12px;
-  }
-  input[type = submit]:hover {
-  background-color: white
-  }
-</style>
-<H3 style = "font-weight: bold; color: #ED534F;">
-{% set msgs = get_flashed_messages() %}
-{% for msg in msgs %}
-<i>
-    Error: {{ msg }}
-</i>
-{% endfor %}
+
+<H3>
+    {% set msgs = get_flashed_messages() %}
+    {% for msg in msgs %}
+    <i>
+        Error: {{ msg }}
+    </i>
+    {% endfor %}
 </H3>
 
-<form action = "/create/authenticate", method = "POST">
+<form action="/create/authenticate" , method="POST">
     <H2>
         Title of story:
     </H2>
@@ -46,12 +35,12 @@ Creating New Story
     <H2>
         Content:
     </H2>
-    <textarea rows="20" cols="50" name ="text"></textarea><br>
-    <input type = "submit" name = "sub" value = "Submit">
+    <textarea rows="20" cols="50" name="text"></textarea><br>
+    <input type="submit" name="sub" value="Submit">
 </form>
 <br><br>
-<form action = "/home", method = "GET">
-    <input type = "submit" name = "cancel" value = "Cancel">
+<form action="/home" , method="GET">
+    <input type="submit" name="cancel" value="Cancel">
 </form>
 
 {% endblock %}

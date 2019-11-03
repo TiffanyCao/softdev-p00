@@ -10,42 +10,42 @@ f    2019-10-28
 
 
 <html>
-    <head>
-        {% block header %}
-            <title>
-                Smallpox Stories :: {% block title %}Title{% endblock %}
-            </title>
-        {% endblock %}
-        <link rel="stylesheet" type="text/css" href="/static/css/style.css?v=1.12">
-    </head>
-    <body>
-        <center>
-            <H1><strong>
-                Smallpox Stories <small><i>-- Pass it Around!™</i></small>
-            </H1></strong>
-            <H2>
-                By Team SOS: Matthew Chan, Hannah Fried, Coby Sontag, Jionghao Wu
-            </H2>
-            <hr noshade size = "3px;">
-            <br>
 
-            <H1 style = "color: #F57D83;">
-                {% block pageTitle %}
-                Page Title
-                {% endblock %}
-            </H1>
+<head>
+    {% block header %}
+    <title>
+        Smallpox Stories :: {% block title %}Title{% endblock %}
+    </title>
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
 
-            {% block content %}
-            Content
+<body>
+    <center>
+        <H1><strong>
+                Smallpox Stories <small><i>-- Pass it Around!™</i></small> </strong> </H1>
+        <H2>
+            By Team SOS: Matthew Chan, Hannah Fried, Coby Sontag, Jionghao Wu
+        </H2>
+        <br>
+
+        <H1 style="color: #F57D83;">
+            {% block pageTitle %}
+            Page Title
             {% endblock %}
+        </H1>
 
-            <footer>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                {% block footer %}
-                COPYRIGHT &copy; 2019 Smallpox Stories<br>
-                DISCLAIMER: For Project #00 of Software Development Class
-                {% endblock %}
-            </footer>
-        </center>
-    </body>
+        {% block content %}
+        Content
+        {% endblock %}
+
+        <footer>
+            {% block footer %}
+            COPYRIGHT &copy; 2019 Smallpox Stories<br>
+            DISCLAIMER: For Project #00 of Software Development Class
+            {% endblock %}
+        </footer>
+    </center>
+</body>
+
 </html>
